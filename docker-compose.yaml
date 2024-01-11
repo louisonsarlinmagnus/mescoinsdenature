@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: api
+    build: ./api
+    image: api:dev
+    ports:
+      - "2804:2804"
+    # volumes:
+    #   - ./api:/api
+    command: bash -c "python manage.py runserver 0.0.0.0:2804"
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    image: frontend:dev
+    ports:
+      - "2803:2803"
+    # volumes:
+    #   - ./frontend:/frontend
+    command: bash -c "npm start"
