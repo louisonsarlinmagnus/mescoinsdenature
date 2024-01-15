@@ -8,4 +8,4 @@ COPY . .
 RUN npm install
 RUN npm install axios
 
-EXPOSE 2803
+EXPOSE 3000

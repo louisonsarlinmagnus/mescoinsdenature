@@ -5,7 +5,7 @@ function HelloWorld() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:2803/hello-world/')
+    axios.get(process.env.API_URL)
       .then(response => {
         setMessage(response.data.message);
       })
@@ -16,8 +16,7 @@ function HelloWorld() {
 
   return (
     <div>
-      <h1>Hello, World!</h1>
-      <p>{message}</p>
+      <h1>The api says : {message}</h1>
     </div>
   );
 }

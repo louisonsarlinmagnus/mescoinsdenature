@@ -16,7 +16,9 @@ services:
     build: ./frontend
     image: frontend:dev
     ports:
-      - "2803:2803"
+      - "2803:3000"
+    environment:
+      - API_URL='http://localhost:2804'
     # volumes:
     #   - ./frontend:/frontend
     command: bash -c "npm start"
